@@ -51,7 +51,7 @@ function startgame(columns, rows) {
             console.log(bombPosition);
             if (isBomb) {
                 cell.classList.add('bg-red');
-                alertMessage.style.color = 'blue';
+                alertMessage.style.color = 'red';
                 alertMessage.innerText = "HAI PERSO!";
                 grid.classList.toggle('noClick');
                 for (let x = 0; x < bombPosition.length; x++) {

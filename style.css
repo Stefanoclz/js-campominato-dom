@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: darkturquoise;
+    background-color: #01013a;
 }
 
 .top-container {
@@ -21,31 +21,36 @@ body {
 
 #grid {
     margin: 50px auto;
-    background-color: aquamarine;
     display: flex;
     flex-wrap: wrap;
+    gap: 5px;
 }
 
 .gridEasy {
-    max-width: 490px;
+    max-width: 565px;
 }
 
 .gridMedium {
-    max-width: 630px;
+    max-width: 675px;
 }
 
 .gridHard {
-    max-width: 700px;
+    max-width: 745px;
 }
 
 .cell {
     width: 70px;
     height: 70px;
-    border: 1px solid black;
+    border: 2px solid grey;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
 }
 
 .bg-azure {
     background-color: lightblue;
+    color: black;
 }
 
 .bg-red {
@@ -57,5 +62,18 @@ body {
 }
 
 #alert {
+    margin-top: 20px;
     text-align: center;
+}
+
+button {
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 25px;
+    border: none;
+    margin: 0 5px;
+}
+
+.cell:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
