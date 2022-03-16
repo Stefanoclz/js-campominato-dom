@@ -22,6 +22,10 @@ const resetBtn = document.getElementById('reset');
 
 let alertMessage = document.getElementById('alert');
 
+let score = document.getElementById('score');
+
+let record = 1;
+
 // inizio diochiarazioni per calcolo griglia e celle
 
 const grid = document.getElementById('grid');
@@ -57,6 +61,7 @@ function startgame(columns, rows) {
                 }
             } else {
                 cell.classList.add('bg-azure');
+                score.innerText = `Il tuo Punteggio: ${record++}`;
             }
         })
     }
