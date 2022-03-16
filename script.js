@@ -62,11 +62,16 @@ function startgame(columns, rows) {
             } else {
                 cell.classList.add('bg-azure');
                 score.innerText = `Il tuo Punteggio: ${record++}`;
-                let maxScore = (columns * rows - 1) - bombPosition.length;
-                if (record === maxScore) {
+                let maxScore = (columns * rows) - bombPosition.length;
+                if ((record - 1) === maxScore) {
                     alertMessage.innerText = "HAI VINTO!";
                     alertMessage.style.color = 'yellow';
                 }
+
+                console.log('punteggio massimo: ' + maxScore);
+
+                console.log('punteggio: ' + (record - 1));
+
 
             }
         })
