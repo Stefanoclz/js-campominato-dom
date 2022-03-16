@@ -31,7 +31,7 @@ let columns;
 let rows;
 
 function generateRandomNumber(min, max) {
-    const range = max - min + 1
+    const range = (max - min) + 1
     return Math.floor(Math.random() * range) + min;
 }
 
@@ -50,11 +50,15 @@ function startgame(columns, rows) {
                 alertMessage.style.color = 'blue';
                 alertMessage.innerText = "HAI PERSO!";
                 grid.classList.toggle('noClick');
+                for (let x = 0; x < bombPosition.length; x++) {
+                    const allBombs = 'cell-' + bombPosition[x];
+                    console.log(allBombs);
+                    document.getElementById(allBombs).classList.add('bg-red');
+                }
             } else {
                 cell.classList.add('bg-azure');
             }
         })
-
     }
 }
 
@@ -72,6 +76,8 @@ function generateBombs(max) {
 // inizio generazione celle e comando per cambio colore al click e generazione numeri
 
 function generateCell(column, rows) {
+
+    alertMessage.innerText = '';
 
     grid.innerHTML = '';
 

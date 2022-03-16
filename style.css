@@ -55,3 +55,7 @@ body {
 .noClick {
     pointer-events: none;
 }
+
+#alert {
+    text-align: center;
+}
