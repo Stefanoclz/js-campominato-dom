@@ -24,8 +24,6 @@ let alertMessage = document.getElementById('alert');
 
 let score = document.getElementById('score');
 
-let record = 1;
-
 // inizio diochiarazioni per calcolo griglia e celle
 
 const grid = document.getElementById('grid');
@@ -40,6 +38,7 @@ function generateRandomNumber(min, max) {
 }
 
 function startgame(columns, rows) {
+    let record = 1;
     grid.classList.remove('noClick');
     let totalCells = columns * rows;
     const bombPosition = generateBombs(totalCells);
@@ -49,6 +48,7 @@ function startgame(columns, rows) {
         const cell = document.getElementById('cell-' + i);
         cell.addEventListener('click', function () {
             const isBomb = bombPosition.includes(i);
+            console.log(bombPosition);
             if (isBomb) {
                 cell.classList.add('bg-red');
                 alertMessage.style.color = 'blue';
@@ -62,6 +62,14 @@ function startgame(columns, rows) {
             } else {
                 cell.classList.add('bg-azure');
                 score.innerText = `Il tuo Punteggio: ${record++}`;
+                if (record === (totalCells.length - bombPosition.length)) {
+                    alertMessage.innerText = "HAI VINTO!";
+                }
+
+                let pippo = totalCells.length - bombPosition.length;
+                console.log('pippi è' + pippo);
+                console.log(totalCells.length);
+                console.log(bombPosition.length);
             }
         })
     }
