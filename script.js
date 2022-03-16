@@ -62,14 +62,12 @@ function startgame(columns, rows) {
             } else {
                 cell.classList.add('bg-azure');
                 score.innerText = `Il tuo Punteggio: ${record++}`;
-                if (record === (totalCells.length - bombPosition.length)) {
+                let maxScore = (columns * rows - 1) - bombPosition.length;
+                if (record === maxScore) {
                     alertMessage.innerText = "HAI VINTO!";
+                    alertMessage.style.color = 'yellow';
                 }
 
-                let pippo = totalCells.length - bombPosition.length;
-                console.log('pippi è' + pippo);
-                console.log(totalCells.length);
-                console.log(bombPosition.length);
             }
         })
     }
